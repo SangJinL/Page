@@ -1,48 +1,128 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시판</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css">
+    <title>Interactive Community Board</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* 별도의 스타일이 필요한 경우 여기에 추가하세요. */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .menu-item:hover {
+            background-color: #e2e8f0;
+        }
+        .menu-item-active {
+            background-color: #e2e8f0;
+            font-weight: 700;
+        }
     </style>
 </head>
+
 <body class="bg-gray-100">
-<div class="container mx-auto px-4 py-8">
-    <header class="flex justify-between items-center py-4">
-        <div class="text-lg font-bold">게시판</div>
-        <nav>
-            <ul class="flex space-x-4">
-                <li>EN</li>
-                <li>JA</li>
-                <li class="text-red-600">KO</li>
+<div class="flex">
+    <!-- Sidebar -->
+    <div class="w-64 bg-white shadow-md min-h-screen p-4">
+        <div class="mb-4">
+            <div class="text-gray-600 text-sm uppercase font-bold px-2 py-1">추가기능 Addons</div>
+            <ul class="mt-2">
+                <li class="menu-item px-2 py-1 cursor-pointer">왼쪽 메뉴</li>
+                <li class="menu-item px-2 py-1 cursor-pointer">왼쪽 데이터</li>
+                <li class="menu-item px-2 py-1 cursor-pointer">왼쪽 연결 설정</li>
+                <li class="menu-item-active px-2 py-1 cursor-pointer">기억 시스템 데이터</li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </div>
 
-    <main>
-        <section class="bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-gray-700 text-xl mb-4">게시글 목록</h2>
-            <ul>
-                <li>
-                    <a href="게시글1.html">게시글 제목 1</a>
-                </li>
-                <li>
-                    <a href="게시글2.html">게시글 제목 2</a>
-                </li>
-                <li>
-                    <a href="게시글3.html">게시글 제목 3</a>
-                </li>
-                <!-- 필요한 만큼 게시글 목록을 추가하세요. -->
-            </ul>
-        </section>
-    </main>
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+        <header class="flex justify-between items-center py-4">
+            <div class="text-lg font-bold">Paimon</div>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-gray-600 hover:text-gray-900">EN</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-gray-900">JA</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-gray-900">KO</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <footer class="text-center text-gray-600 py-4">
-        <p>@Paimon</p>
-    </footer>
+        <main>
+            <section class="bg-white shadow-md rounded-lg p-6 mb-6">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                        <h2 class="text-xl font-bold">ATK CRIT</h2>
+                        <p class="text-gray-600">이달의 진단</p>
+                        <div class="bg-gray-200 h-24"></div>
+                    </div>
+                    <div class="space-y-2">
+                        <h2 class="text-xl font-bold">AVG DMG</h2>
+                        <p class="text-gray-600">기대치 분석</p>
+                        <div class="bg-gray-200 h-24"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-xl font-bold mb-4">이걸 바탕으로 아래 형식의 게시판을 만들어줘</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full leading-normal">
+                        <thead>
+                        <tr>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                제목
+                            </th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                작성자
+                            </th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                업데이트 날짜
+                            </th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                조회
+                            </th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                추천
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <div class="flex items-center">
+                                    <div class="ml-3">
+                                        <p class="text-gray-900 whitespace-no-wrap">
+                                            기억 시스템에 데이터 업데이트 방법
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <p class="text-gray-900 whitespace-no-wrap">chun</p>
+                            </td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <p class="text-gray-900 whitespace-no-wrap">2023.11.26</p>
+                            </td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <p class="text-gray-900 whitespace-no-wrap">4746</p>
+                            </td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <p class="text-gray-900 whitespace-no-wrap">5/0</p>
+                            </td>
+                        </tr>
+                        <!-- More rows... -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
 </div>
+
+<script>
+    // Any additional JavaScript can be added here
+</script>
 </body>
+
 </html>
