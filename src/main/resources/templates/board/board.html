@@ -1,10 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css">
+    <style>
+        /* 별도의 스타일이 필요한 경우 여기에 추가하세요. */
+    </style>
 </head>
-<body>
+<body class="bg-gray-100">
+<div class="container mx-auto px-4 py-8">
+    <header class="flex justify-between items-center py-4">
+        <div class="text-lg font-bold">게시판</div>
+        <nav>
+            <ul class="flex space-x-4">
+                <li>EN</li>
+                <li>JA</li>
+                <li class="text-red-600">KO</li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
+        <section class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-gray-700 text-xl mb-4">게시글 목록</h2>
+            <ul>
+                <li>
+                    <a href="게시글1.html">게시글 제목 1</a>
+                </li>
+                <li>
+                    <a href="게시글2.html">게시글 제목 2</a>
+                </li>
+                <li>
+                    <a href="게시글3.html">게시글 제목 3</a>
+                </li>
+                <!-- 필요한 만큼 게시글 목록을 추가하세요. -->
+            </ul>
+        </section>
+    </main>
+
+    <footer class="text-center text-gray-600 py-4">
+        <p>@Paimon</p>
+    </footer>
+</div>
 </body>
 </html>
