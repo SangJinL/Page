@@ -1,4 +1,4 @@
-package com.example.test.Repository;
+package test.Repository;
 
 public interface BoardRepository {
 }

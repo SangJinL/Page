@@ -1,6 +1,6 @@
-package com.example.test.Service;
+package test.Service;
 
-import com.example.test.Repository.SignupRepository;
+import test.Repository.SignupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

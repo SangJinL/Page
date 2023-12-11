@@ -1,6 +1,6 @@
-package com.example.test.Repository;
+package test.Repository;
 
-import com.example.test.Entity.User;
+import test.Entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface SignupRepository extends JpaRepository<User, Long> {
