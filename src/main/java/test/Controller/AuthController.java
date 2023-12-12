@@ -1,9 +1,5 @@
 package test.Controller;
 
-import test.DTO.UserDTO;
-import test.Entity.User;
-import test.Repository.SignupRepository;
-import test.Service.AuthService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,6 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.thymeleaf.util.StringUtils;
+import test.DTO.UserDTO;
+import test.Entity.User;
+import test.Service.AuthService;
 
 @Controller
 @RequestMapping("/auth")
@@ -18,9 +17,6 @@ public class AuthController {
 
     @Autowired
     private AuthService authService;
-
-    @Autowired
-    private SignupRepository signupRepository;
 
     // 로그인 페이지
     @GetMapping("/login")
@@ -59,8 +55,8 @@ public class AuthController {
 
         try {
             // User 엔티티 생성 및 저장
-            User user = new User(userDTO.getUserid(), userDTO.getName(), userDTO.getPassword(), userDTO.getEmail());
-            signupRepository.save(user);
+            User user = new User(userDTO.getUserid(), userDTO.getName(), hashedPassword, userDTO.getEmail());
+            AuthService.save(user);
 
             return ResponseEntity.ok("회원가입 성공");
         } catch (Exception e) {
@@ -68,7 +64,6 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("회원가입 중 오류 발생: " + e.getMessage());
         }
     }
-
 
     private String hashPassword(String password) {
         // 비밀번호 해시화 로직 구현
